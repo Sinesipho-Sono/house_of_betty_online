@@ -6,7 +6,7 @@ function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-pink shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="/" className="text-2xl font-bold text-gray-800">
           House of Betty
@@ -15,7 +15,7 @@ function Navbar() {
         <ul className="hidden md:flex space-x-6">
           <li>
             <a href="/" className="text-gray-600 hover:text-blue-500">
-              Home
+              Dresses
             </a>
           </li>
 
@@ -24,57 +24,52 @@ function Navbar() {
               className="flex items-center text-gray-600 hover:text-blue-500"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
-              Products <FiChevronDown className="ml-1" />
+              Collections <FiChevronDown className="ml-1" />
             </button>
 
             <ul
-              className={`absolute left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-40 ${
+              className={`absolute left-0 mt-2 bg-pink shadow-lg rounded-lg py-2 w-40 ${
                 dropdownOpen ? "block" : "hidden"
               } md:group-hover:block`}
             >
               <li>
                 <a
-                  href="/products/men"
+                  href="/collections/officeWear"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
-                  Men
+                  Office wear
                 </a>
               </li>
               <li>
                 <a
-                  href="/products/women"
+                  href="/collections/dateNight"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
-                  Women
+                  Date night edition
                 </a>
               </li>
               <li>
                 <a
-                  href="/products/kids"
+                  href="/collections/lounge"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
-                  Kids
+                  Lounge wear
                 </a>
               </li>
               <li>
                 <a
-                  href="/products/accessories"
+                  href="/collections/modest"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
-                  Accessories
+                  Modest outfits
                 </a>
               </li>
             </ul>
           </li>
 
           <li>
-            <a href="/about" className="text-gray-600 hover:text-blue-500">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="text-gray-600 hover:text-blue-500">
-              Contact
+            <a href="/Clothing" className="text-gray-600 hover:text-blue-500">
+              Clothing
             </a>
           </li>
         </ul>
@@ -88,7 +83,7 @@ function Navbar() {
       </div>
 
       {menuOpen && (
-        <ul className="md:hidden flex flex-col items-center bg-gray-100 py-4 space-y-4">
+        <ul className="md:hidden flex flex-col items-center bg-pink py-4 space-y-4">
           <li>
             <a href="/" className="text-gray-600 hover:text-blue-500">
               Home
@@ -100,41 +95,41 @@ function Navbar() {
               className="text-gray-600 hover:text-blue-500 flex items-center"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
-              Products <FiChevronDown className="ml-1" />
+              Collections <FiChevronDown className="ml-1" />
             </button>
 
             {dropdownOpen && (
-              <ul className="flex flex-col items-center bg-white shadow-md rounded-lg py-2 w-40 mt-2">
+              <ul className="flex flex-col items-center bg-pink shadow-md rounded-lg py-2 w-40 mt-2">
                 <li>
                   <a
-                    href="/products/men"
+                    href="/collections/officeWear"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    Men
+                    Office wear
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/products/women"
+                    href="/collections/dateNight"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    Women
+                    Date night edition
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/products/kids"
+                    href="/collections/loungeWear"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    Kids
+                    Lounge wear
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/products/accessories"
+                    href="/collections/modest"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    Accessories
+                    Modest outfits
                   </a>
                 </li>
               </ul>
@@ -142,13 +137,8 @@ function Navbar() {
           </li>
 
           <li>
-            <a href="/about" className="text-gray-600 hover:text-blue-500">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="text-gray-600 hover:text-blue-500">
-              Contact
+            <a href="/clothing" className="text-gray-600 hover:text-blue-500">
+              Clothing
             </a>
           </li>
         </ul>

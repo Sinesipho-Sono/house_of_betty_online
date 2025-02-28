@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-pink: #fcf2f2;
+}
