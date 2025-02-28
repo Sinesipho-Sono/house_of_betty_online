@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaUser } from "react-icons/fa";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 
 function Navbar() {
@@ -73,7 +74,11 @@ function Navbar() {
             </a>
           </li>
         </ul>
-
+        <div className="content-end">
+          <a href="/Login" className="text-black hover:text-blue-500">
+            <FaUser size={20} />
+          </a>
+        </div>
         <button
           className="md:hidden text-gray-600 text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}

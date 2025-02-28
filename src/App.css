@@ -3,4 +3,7 @@
 @theme {
   --color-*: initial;
   --color-pink: #fcf2f2;
+  --color-gray: #a6a4a4;
+  --color-white: #ffff;
+  --color-pink-dark: #ea6dc4;
 }
