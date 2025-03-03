@@ -12,49 +12,49 @@ const OfficewearProductCollection = () => {
     {
       id: 1,
       name: "Black and white office set",
-      price: "R350",
+      price: "350",
       image: "/officeWear images/outfit1.jpeg",
     },
     {
       id: 2,
       name: "White two-piece office set",
-      price: "R400",
+      price: "400",
       image: "/officeWear images/outfit2.jpeg",
     },
     {
       id: 3,
       name: "Pink off shoulder office set",
-      price: "R300",
+      price: "300",
       image: "/officeWear images/outfit3.jpeg",
     },
     {
       id: 4,
       name: "Green jumpsuit office set ",
-      price: "R450",
+      price: "450",
       image: "/officeWear images/outfit4.jpeg",
     },
     {
       id: 5,
       name: "Red two piece office set ",
-      price: "R550",
+      price: "550",
       image: "/officeWear images/outfit5.jpeg",
     },
     {
       id: 6,
       name: "Checkered two-piece set ",
-      price: "R450",
+      price: "450",
       image: "/officeWear images/outfit6.jpeg",
     },
     {
       id: 7,
       name: "Navy office set ",
-      price: "R650",
+      price: "650",
       image: "/officeWear images/outfit7.jpeg",
     },
     {
       id: 8,
       name: "Wide-legged black jumpsuit ",
-      price: "R400",
+      price: "400",
       image: "/officeWear images/outfit8.jpeg",
     },
   ];
@@ -90,7 +90,7 @@ const OfficewearProductCollection = () => {
                     <div className="col-span-2">
                       <h2 className="mb-2">{product.name}</h2>
 
-                      <p className="font-bold">{product.price}</p>
+                      <p className="font-bold">R{product.price}</p>
                     </div>
                     <div className="col content-end items-end justify-end p-2">
                       <button

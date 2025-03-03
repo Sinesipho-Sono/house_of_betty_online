@@ -126,7 +126,7 @@ function Navbar() {
               <ul className="flex flex-col items-center bg-pink shadow-md rounded-lg py-2 w-40 mt-2">
                 <li>
                   <a
-                    href="/collections/officeWear"
+                    href="/OfficeWearProductCollection"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
                     Office wear
