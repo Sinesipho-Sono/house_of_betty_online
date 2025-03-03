@@ -79,9 +79,9 @@ function Navbar() {
         </ul>
         <div className="content-end flex space-x-4">
           <div className="col">
-            <a href="/Login" className="text-black hover:text-blue-500">
+            <Link to="/Login" className="text-black hover:text-blue-500">
               <FaUser size={20} />
-            </a>
+            </Link>
           </div>
           <div className="col">
             <div className="relative flex items-center">
