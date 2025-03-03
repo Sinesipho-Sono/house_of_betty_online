@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { auth, googleProvider } from "../firebase";
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import React from "react";
 import Navbar from "./Navbar";
 import Footer from "../../Footer";
 export default function Login() {
