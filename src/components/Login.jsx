@@ -48,9 +48,6 @@ export default function Login() {
                   type="email"
                   id="email"
                   className="w-full p-2 m-5  mb-8 mt-0 border border-black rounded-md focus:outline-none focus:border-blue-500"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
                 />
               </div>
               <div className="ml-5 mb-0 block">
@@ -66,9 +63,6 @@ export default function Login() {
                   type="password"
                   id="password"
                   className="w-full p-2 m-5 mb-8 mt-0 border border-black rounded-md focus:outline-none focus:border-blue-500"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
                 />
               </div>
               <button
@@ -86,7 +80,6 @@ export default function Login() {
             <button
               type="button"
               className="w-full p-2 border border-black rounded-md hover:bg-pink m-5 mb-8 "
-              onClick={handleGoogleLogin}
             >
               <i className="fab fa-google mr-2"></i>Continue with Google
             </button>{" "}
