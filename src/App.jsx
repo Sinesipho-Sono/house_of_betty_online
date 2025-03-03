@@ -3,15 +3,24 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Homepage from "./Homepage";
 import Login from "./components/Login";
-
+import OfficewearProductCollection from "./CategoryDisplay/OfficeWearProductCollection";
+import { CartProvider } from "./components/CartContext";
+import CartPage from "./CartPage";
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/Login" element={<Login />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/CartPage" element={<CartPage />} />
+          <Route
+            path="/OfficeWearProductCollection"
+            element={<OfficewearProductCollection />}
+          />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

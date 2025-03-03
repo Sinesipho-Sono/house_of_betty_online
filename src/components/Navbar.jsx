@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { useCart } from "./CartContext";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { cart } = useCart();
 
   return (
     <nav className="bg-pink shadow-md">
@@ -34,12 +37,12 @@ function Navbar() {
               } md:group-hover:block`}
             >
               <li>
-                <a
-                  href="/collections/officeWear"
+                <Link
+                  to="/OfficeWearProductCollection"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Office wear
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -74,11 +77,27 @@ function Navbar() {
             </a>
           </li>
         </ul>
-        <div className="content-end">
-          <a href="/Login" className="text-black hover:text-blue-500">
-            <FaUser size={20} />
-          </a>
+        <div className="content-end flex space-x-4">
+          <div className="col">
+            <a href="/Login" className="text-black hover:text-blue-500">
+              <FaUser size={20} />
+            </a>
+          </div>
+          <div className="col">
+            <div className="relative flex items-center">
+              <Link to="/CartPage" className="cart-link">
+                <i className="fas fa-shopping-cart text-xl">
+                  {cart.length > 0 && (
+                    <span className="cart-count absolute -top-2 -right-2 inline-flex items-center justify-center w-4 h-4 text-xs font-semibold text-black bg-pink rounded-full">
+                      {cart.length}
+                    </span>
+                  )}
+                </i>
+              </Link>
+            </div>
+          </div>
         </div>
+
         <button
           className="md:hidden text-gray-600 text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}

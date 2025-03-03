@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function CategoryDisplay1() {
   return (
     <div className="CategoryDisplay1">
@@ -7,9 +7,9 @@ export default function CategoryDisplay1() {
         <h3 className="text-left tracking-widest col-start">
           new in office wear
         </h3>
-        <a href="" className="text-right col-end">
+        <Link to="/OfficeWearProductCollection" className="text-right col-end">
           shop <i className="fa-solid fa-chevron-right"></i>
-        </a>
+        </Link>
       </div>
       <div className="container  m-auto p-2 flex justify-center mb-1">
         <div className="grid grid-cols-4 gap-4">
