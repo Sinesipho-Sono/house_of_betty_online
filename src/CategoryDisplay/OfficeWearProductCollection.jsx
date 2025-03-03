@@ -70,7 +70,7 @@ const OfficewearProductCollection = () => {
       <main className="flex-grow">
         <div className="OfficewearCollection">
           <h1 className="text-center tracking-widest font-bold text-3xl m-5">
-            Dresses
+            Office wear
           </h1>
           {addedToCart && (
             <div className="view-cart-message">
