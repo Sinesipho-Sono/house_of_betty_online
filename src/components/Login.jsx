@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { auth } from "../firebase";
-import {
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  googleProvider,
-} from "firebase/auth";
+import { auth, googleProvider } from "../firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import Navbar from "./Navbar";
 import Footer from "../../Footer";
 export default function Login() {
