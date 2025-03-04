@@ -1,7 +1,7 @@
 ## House of Betty Fashion e-Commerce store 🛍️
 A modern fashion e-commerce website built using React and Tailwind CSS, featuring essential shopping functionalities like cart management, product display and a checkout system.
 
-#✨ Features
+# ✨ Features
 - Shopping Features
 Product Listing – Display a variety of fashion items (clothing and collections).
 Add to Cart – Easily add/remove items from the cart.
