@@ -2,9 +2,9 @@
 A modern fashion e-commerce website built using React and Tailwind CSS, featuring essential shopping functionalities like cart management, product display and a checkout system.
 
 # Tech Stack
-Frontend: React, React Router
-Styling: Tailwind CSS
-State Management: useState, Context API
+-Frontend: React, React Router
+- Styling: Tailwind CSS
+- State Management: useState, Context API
 
 
 # ✨ Features
