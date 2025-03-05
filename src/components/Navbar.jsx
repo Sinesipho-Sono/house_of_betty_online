@@ -45,12 +45,12 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="/collections/dateNight"
+                <Link
+                  to="/DateNightProductCollection"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Date night edition
-                </a>
+                </Link>
               </li>
               <li>
                 <a

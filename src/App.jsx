@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Homepage from "./Homepage";
 import Login from "./components/Login";
 import OfficewearProductCollection from "./CategoryDisplay/OfficeWearProductCollection";
+import DateNightProductCollection from "./CategoryDisplay/DateNightProductCollection";
 import { CartProvider } from "./components/CartContext";
 import CartPage from "./CartPage";
 function App() {
@@ -17,6 +18,10 @@ function App() {
           <Route
             path="/OfficeWearProductCollection"
             element={<OfficewearProductCollection />}
+          />
+          <Route
+            path="/DateNightProductCollection"
+            element={<DateNightProductCollection />}
           />
         </Routes>
       </Router>
