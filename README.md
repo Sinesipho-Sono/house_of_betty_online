@@ -10,6 +10,7 @@ A modern fashion e-commerce website built using React and Tailwind CSS, featurin
 # ✨ Features
 - Shopping Features
 Product Listing – Display a variety of fashion items (clothing and collections).
+Product Filtering & Sorting – Filter by category and name (A-Z) or sort by price (low to high, high to low).
 Add to Cart – Easily add/remove items from the cart.
 Quantity Update – Adjust item quantities in the cart.
 - Checkout & Payment
@@ -22,7 +23,6 @@ Tailwind CSS – Clean and modern styling.
 # Future updates
 - User authentication (Login/Signup) using Firebase
 - Payment gateway integration
-- Product filtering
 - Wishlist functionality
 
 
