@@ -14,7 +14,6 @@ const OfficewearProductCollection = () => {
   const handleAddToCart = (product) => {
     addToCart(product);
     setAddedToCart(true);
-    setTimeout(() => setAddedToCart(false), 3000);
   };
 
   const filteredProducts = products.filter((product) => {
@@ -36,12 +35,6 @@ const OfficewearProductCollection = () => {
           <h1 className="text-center tracking-widest font-bold text-3xl m-5">
             Office Wear
           </h1>
-
-          {addedToCart && (
-            <div className="view-cart-message">
-              <Link to="/CartPage">View Cart</Link>
-            </div>
-          )}
 
           <div className="flex justify-between items-center px-4 mb-4">
             <select

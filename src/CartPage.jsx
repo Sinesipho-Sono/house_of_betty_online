@@ -15,8 +15,7 @@ export default function Cart() {
   });
 
   const subtotal = cart.reduce(
-    (acc, item) =>
-      acc + parseFloat(item.price.replace("R", "")) * item.quantity,
+    (acc, item) => acc + item.price * item.quantity,
     0
   );
   const shippingCost = cart.length > 0 ? 200 : 0;
@@ -54,11 +53,7 @@ export default function Cart() {
                         className="aspect-2/3 w-24 h-24 object-cover"
                       />
                       <p>
-                        {item.name} - R
-                        {(
-                          parseFloat(item.price.replace("R", "")) *
-                          item.quantity
-                        ).toFixed(2)}
+                        {item.name} - R{(item.price * item.quantity).toFixed(2)}
                       </p>
                       <div className="flex items-center gap-3 mt-2">
                         <button
