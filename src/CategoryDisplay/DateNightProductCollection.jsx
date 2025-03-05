@@ -31,8 +31,8 @@ const DateNightProductCollection = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-grow">
-        <div className="DateNightCollection">
+      <main className="flex-grow pt-16">
+        <div className="DateNightCollection ">
           <h1 className="text-center tracking-widest font-bold text-3xl m-5">
             Date night collection
           </h1>

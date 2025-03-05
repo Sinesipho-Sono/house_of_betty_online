@@ -6,7 +6,7 @@ export default function Login() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-16">
         <div className="Login flex  justify-center min-h-screen p-4">
           <div className="text-center max-w-sm w-full">
             <h1 className="text-2xl m-4 font-bold">Sign In</h1>
