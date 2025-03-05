@@ -4,3 +4,7 @@
   color: palevioletred;
   padding: 10px;
 }
+
+select {
+  border: 2px solid #a8a7a7;
+}

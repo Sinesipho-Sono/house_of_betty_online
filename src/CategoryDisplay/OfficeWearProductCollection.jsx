@@ -7,62 +7,84 @@ import "./ProductPages.css";
 const OfficewearProductCollection = () => {
   const { addToCart } = useCart();
   const [addedToCart, setAddedToCart] = useState(false);
+  const [category, setCategory] = useState("all");
+  const [sortOption, setSortOption] = useState("");
 
   const products = [
     {
       id: 1,
       name: "Black and white office set",
-      price: "350",
+      price: 350,
       image: "/officeWear images/outfit1.jpeg",
+      category: "suit",
     },
     {
       id: 2,
       name: "White two-piece office set",
-      price: "400",
+      price: 400,
       image: "/officeWear images/outfit2.jpeg",
+      category: "co-ord",
     },
     {
       id: 3,
       name: "Pink off shoulder office set",
-      price: "300",
+      price: 300,
       image: "/officeWear images/outfit3.jpeg",
+      category: "co-ord",
     },
     {
       id: 4,
-      name: "Green jumpsuit office set ",
-      price: "450",
+      name: "Green jumpsuit office set",
+      price: 450,
       image: "/officeWear images/outfit4.jpeg",
+      category: "jumpsuit",
     },
     {
       id: 5,
-      name: "Red two piece office set ",
-      price: "550",
+      name: "Red two piece office set",
+      price: 550,
       image: "/officeWear images/outfit5.jpeg",
+      category: "suit",
     },
     {
       id: 6,
-      name: "Checkered two-piece set ",
-      price: "450",
+      name: "Checkered two-piece set",
+      price: 450,
       image: "/officeWear images/outfit6.jpeg",
+      category: "office set",
     },
     {
       id: 7,
-      name: "Navy office set ",
-      price: "650",
+      name: "Navy office set",
+      price: 650,
       image: "/officeWear images/outfit7.jpeg",
+      category: "suit",
     },
     {
       id: 8,
-      name: "Wide-legged black jumpsuit ",
-      price: "400",
+      name: "Wide-legged black jumpsuit",
+      price: 400,
       image: "/officeWear images/outfit8.jpeg",
+      category: "jumpsuit",
     },
   ];
+
   const handleAddToCart = (product) => {
     addToCart(product);
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 3000);
   };
+
+  const filteredProducts = products.filter((product) => {
+    return category === "all" || product.category === category;
+  });
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortOption === "priceLow") return a.price - b.price;
+    if (sortOption === "priceHigh") return b.price - a.price;
+    if (sortOption === "name") return a.name.localeCompare(b.name);
+    return 0;
+  });
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -70,16 +92,42 @@ const OfficewearProductCollection = () => {
       <main className="flex-grow">
         <div className="OfficewearCollection">
           <h1 className="text-center tracking-widest font-bold text-3xl m-5">
-            Office wear
+            Office Wear
           </h1>
+
           {addedToCart && (
             <div className="view-cart-message">
               <Link to="/CartPage">View Cart</Link>
             </div>
           )}
+
+          <div className="flex justify-between items-center px-4 mb-4">
+            <select
+              className="border p-2 rounded"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="all">All</option>
+              <option value="suit">Suits</option>
+              <option value="jumpsuit">Jumpsuits</option>
+              <option value="co-ord">Co-ords</option>
+            </select>
+
+            <select
+              className="border p-2 rounded border:bg-gray"
+              value={sortOption}
+              onChange={(e) => setSortOption(e.target.value)}
+            >
+              <option value="">Sort By</option>
+              <option value="priceLow">Price: Low to High</option>
+              <option value="priceHigh">Price: High to Low</option>
+              <option value="name">Name: A-Z</option>
+            </select>
+          </div>
+
           <div className="container m-auto p-2 flex justify-center mb-1">
             <div className="grid grid-cols-4 gap-4">
-              {products.map((product) => (
+              {sortedProducts.map((product) => (
                 <div key={product.id} className="col product-item">
                   <img
                     src={product.image}
@@ -89,13 +137,12 @@ const OfficewearProductCollection = () => {
                   <div className="grid grid-cols-3 gap-8">
                     <div className="col-span-2">
                       <h2 className="mb-2">{product.name}</h2>
-
                       <p className="font-bold">R{product.price}</p>
                     </div>
                     <div className="col content-end items-end justify-end p-2">
                       <button
-                        className="add-cart inline-block "
-                        onClick={() => addToCart(product)}
+                        className="add-cart inline-block"
+                        onClick={() => handleAddToCart(product)}
                       >
                         <i className="fas fa-shopping-cart text-2xl"></i>
                       </button>
