@@ -3,6 +3,17 @@
   background-color: #fcf2f2;
   color: palevioletred;
   padding: 10px;
+  transition: all 150ms ease-in-out;
+  &:active {
+    color: #fcf2f2;
+    background-color: palevioletred;
+
+    transform: scale(0.5);
+  }
+  &:hover {
+    color: #fcf2f2;
+    background-color: palevioletred;
+  }
 }
 
 select {
