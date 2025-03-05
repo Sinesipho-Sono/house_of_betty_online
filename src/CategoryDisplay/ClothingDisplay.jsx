@@ -1,4 +1,5 @@
 import React from "react";
+import "./Clothing.css";
 
 export default function ClothingDisplay() {
   return (

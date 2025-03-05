@@ -1,0 +1,6 @@
+div.relative:hover,
+.CategoryDisplay1 img:hover,
+.CategoryDisplay2 img:hover {
+  transform: scale(1.05);
+  transition: all 150ms ease-in-out;
+}

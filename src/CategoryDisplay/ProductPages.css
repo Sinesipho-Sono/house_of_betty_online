@@ -19,3 +19,7 @@
 select {
   border: 2px solid #a8a7a7;
 }
+img:hover {
+  transform: scale(1.05);
+  transition: all 150ms ease-in-out;
+}

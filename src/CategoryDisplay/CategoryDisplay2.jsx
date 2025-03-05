@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Clothing.css";
 export default function CategoryDisplay2() {
   return (
-    <div className="CategoryDisplay1">
+    <div className="CategoryDisplay2">
       <div className="grid grid-cols-2 m-auto p-11 pb-0 pt-2">
         <h3 className="text-left tracking-widest col-start">
           new in date night edition

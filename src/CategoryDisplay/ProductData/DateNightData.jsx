@@ -36,7 +36,7 @@ const products = [
   },
   {
     id: 106,
-    name: " Gold silk midi dress",
+    name: "Gold silk midi dress",
     price: 450,
     image: "/dateNight images/outfit6.jpeg",
     category: "dress",
