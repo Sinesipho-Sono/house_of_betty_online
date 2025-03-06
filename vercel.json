@@ -2,6 +2,7 @@
   "headers": [
     {
       "source": "/api/(.*)",
+      "destination": "/backend",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",

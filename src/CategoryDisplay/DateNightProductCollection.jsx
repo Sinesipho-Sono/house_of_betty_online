@@ -13,7 +13,7 @@ const DateNightProductCollection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/date-night-products")
+    fetch("https://house-of-betty-online.vercel.app/date-night-products")
       .then((response) => response.json())
       .then((data) => {
         setDateNightProducts(data);
