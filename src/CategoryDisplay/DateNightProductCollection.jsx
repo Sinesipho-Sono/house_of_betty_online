@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCart } from "../components/CartContext";
 import Navbar from "../components/Navbar";
 import Footer from "../../Footer";
-import products from "./ProductData/DateNightData";
 import "./ProductPages.css";
 
 const DateNightProductCollection = () => {
@@ -10,13 +9,27 @@ const DateNightProductCollection = () => {
   const [addedToCart, setAddedToCart] = useState(false);
   const [category, setCategory] = useState("all");
   const [sortOption, setSortOption] = useState("");
+  const [dateNightProducts, setDateNightProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetch("http://localhost:5000/api/date-night-products")
+      .then((response) => response.json())
+      .then((data) => {
+        setDateNightProducts(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching date-night products:", error);
+        setLoading(false);
+      });
+  }, []);
   const handleAddToCart = (product) => {
     addToCart(product);
     setAddedToCart(true);
   };
 
-  const filteredProducts = products.filter((product) => {
+  const filteredProducts = dateNightProducts.filter((product) => {
     return category === "all" || product.category === category;
   });
 

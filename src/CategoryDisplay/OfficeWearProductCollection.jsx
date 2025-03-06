@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCart } from "../components/CartContext";
 import Navbar from "../components/Navbar";
 import Footer from "../../Footer";
-import products from "./ProductData/OfficeWearData";
 import "./ProductPages.css";
 
 const OfficewearProductCollection = () => {
@@ -10,6 +9,21 @@ const OfficewearProductCollection = () => {
   const [addedToCart, setAddedToCart] = useState(false);
   const [category, setCategory] = useState("all");
   const [sortOption, setSortOption] = useState("");
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const handleAddToCart = (product) => {
     addToCart(product);
@@ -43,7 +57,7 @@ const OfficewearProductCollection = () => {
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value="all">All</option>
-              <option value="suit">Suits</option>
+              <option value="set">Sets</option>
               <option value="jumpsuit">Jumpsuits</option>
               <option value="co-ord">Co-ords</option>
             </select>
