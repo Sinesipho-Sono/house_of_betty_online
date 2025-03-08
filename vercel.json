@@ -2,7 +2,6 @@
   "headers": [
     {
       "source": "/api/(.*)",
-      "destination": "/backend",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -17,6 +16,33 @@
           "value": "Content-Type, Authorization"
         }
       ]
+    }
+  ],
+  "builds": [
+    {
+      "src": "backend/api/products/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "backend/api/date_night_products/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/products",
+      "dest": "backend/api/products/index.js"
+    },
+    {
+      "src": "/api/date-night-products",
+      "dest": "backend/api/date_night_products/index.js"
     }
   ]
 }
