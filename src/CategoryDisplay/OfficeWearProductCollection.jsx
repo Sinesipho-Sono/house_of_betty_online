@@ -13,7 +13,7 @@ const OfficewearProductCollection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://house-of-betty-online.vercel.app/api/products")
+    fetch("/api/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
