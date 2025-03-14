@@ -3,10 +3,7 @@
     {
       "source": "/api/(.*)",
       "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
         {
           "key": "Access-Control-Allow-Methods",
           "value": "GET, POST, PUT, DELETE, OPTIONS"
@@ -18,11 +15,9 @@
       ]
     }
   ],
+
   "builds": [
-    {
-      "src": "backend/api/products/index.js",
-      "use": "@vercel/node"
-    },
+    { "src": "backend/api/products/index.js", "use": "@vercel/node" },
     {
       "src": "backend/api/date_night_products/index.js",
       "use": "@vercel/node"
@@ -30,18 +25,14 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "config": { "distDir": "dist" }
     }
   ],
+
   "routes": [
+    { "src": "/api/products", "dest": "backend/api/products/index.js" },
     {
-      "src": "/api/products",
-      "dest": "backend/api/products/index.js"
-    },
-    {
-      "src": "/api/date-night-products",
+      "src": "/api/date_night_products",
       "dest": "backend/api/date_night_products/index.js"
     }
   ]
