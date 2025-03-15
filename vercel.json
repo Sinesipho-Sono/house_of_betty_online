@@ -16,7 +16,7 @@
     }
   ],
 
-  "routes": [
+  "rewrites": [
     { "src": "/api/products", "dest": "/backend/api/products/index.js" },
     {
       "src": "/api/date_night_products",
