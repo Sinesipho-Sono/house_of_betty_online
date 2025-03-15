@@ -15,12 +15,26 @@
       ]
     }
   ],
-
   "rewrites": [
-    { "src": "/api/products", "dest": "/backend/api/products/index.js" },
     {
-      "src": "/api/date_night_products",
-      "dest": "/backend/api/date_night_products/index.js"
+      "source": "/api/products",
+      "destination": "/backend/api/products/index.js"
+    },
+    {
+      "source": "/api/date_night_products",
+      "destination": "/backend/api/date_night_products/index.js"
+    }
+  ],
+  "builds": [
+    { "src": "backend/api/products/index.js", "use": "@vercel/node" },
+    {
+      "src": "backend/api/date_night_products/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
     }
   ]
 }
